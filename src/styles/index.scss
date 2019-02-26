@@ -1,3 +1,10 @@
+@import 'variables';
+
+@keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
 html, body {
   height: 100%;
   width: 100%;
@@ -15,9 +22,56 @@ section {
   width: 100%;
   height: 100vh;
   background-color: #ED4D6E;
+  background-image: linear-gradient(to bottom, #ed4d6e, #ffffff);
   position: absolute;
   top: 0;
   left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-image 800ms $ease-expo-out;
+}
+
+.img-container {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  // opacity: 0;
+  animation: fade-in 800ms 500ms both;
+
+  // &.fade-in {
+  //   opacity: 1;
+  //   transition: opacity 500ms $ease-expo-out;
+  //   transition-delay: 300ms;
+  // }
+}
+
+.inner-container {
+  height: 100%;
+  width: 100%;
+  background-image: url('https://random.dog/59011d06-2c3e-4fe7-ac89-d6c17e7a74c9.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.button-shuffle {
+  background-color: transparent;
+  margin-top: 100px;
+  border: none;
+  color: #ED4D6E;
+  font-size: 24px;
+  transition: color 500ms $ease-expo-out;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 
